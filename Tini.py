@@ -997,7 +997,7 @@ async def help(ctx):
     embed.add_field(name = 'setnick', value ='set a nickname for a user',inline = False)
     embed.add_field(name = 'purge', value ='delete messages',inline = False)
     embed.add_field(name = 'ban', value ='ban a user',inline = False)
-    embed.add_field(name = 'unban', value ='unban a user',inline = Flse)
+    embed.add_field(name = 'unban', value ='unban a user',inline = False)
     embed.add_field(name = 'bans', value ='list of the people who are banned',inline = False)
     embed.add_field(name = 'serverinfo', value ='info of the server',inline = False)
     embed.add_field(name = 'membercount', value ='check how many members,users and bots you have',inline = False)
