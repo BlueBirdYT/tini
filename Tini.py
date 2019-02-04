@@ -6,6 +6,7 @@ import time
 import colorsys
 import aiohttp
 import random
+import os
 import datetime
 from discord import Game, Embed, Color, Status, ChannelType
 
@@ -1008,5 +1009,17 @@ async def help(ctx):
     embed.add_field(name = 'thuglife', value ='gif command',inline = False)
     embed.add_field(name = 'google', value ='search on google',inline = False)
     embed.add_field(name = 'rps', value ='play rock paper scissors',inline = False)
-    embed.add_field(name = 'kick', value ='kick someone',inline =    embed.add_field(name = 'hug', value ='hug 
-    embed.add_field(name = 'joke', value ='hear jokes'dd_field(name = 'rolldice', value
+    embed.add_field(name = 'kick', value ='kick a user',inline = False)
+    embed.add_field(name = 'kiss', value ='kiss someone',inline = False)
+    embed.add_field(name = 'hug', value ='hug someone',inline = False)
+    embed.add_field(name = 'joke', value ='hear jokes from the bot',inline = False)
+    embed.add_field(name = 'rolldice', value ='roll a dice',inline = False)
+    embed.add_field(name = 'invite', value ='invite the bot to a server',inline = False)
+    embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
+    embed.add_field(name = 'remind', value ='remind yourself',inline = False)
+    await client.send_message(author,embed=embed)
+    await client.say('📨 Check DMs For Information')
+    
+client.run(os.getenv('Token'))
+
+
