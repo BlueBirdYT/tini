@@ -964,7 +964,7 @@ async def help(ctx):
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
     embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
-    embed.add_field(name = 'ping', valu ='ping is a common command of bots',inline = False)
+    embed.add_field(name = 'ping', value ='ping is a common command of bots',inline = False)
     embed.add_field(name = 'jointest ',value ='a test for the welcomer feature',inline = False)
     embed.add_field(name = 'servers ',value ='command for only the devs of the bot',inline = False)
     embed.add_field(name = 'lock',value ='lock channels',inline = False)
