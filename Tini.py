@@ -21,6 +21,8 @@ async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='for *help', type=2))
         await asyncio.sleep(20)
+        await client.change_presence(game=discord.Game(name='for *help2', type=2))
+        await asyncio.sleep(20)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
         await asyncio.sleep(20)
         await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
@@ -989,6 +991,15 @@ async def help(ctx):
     embed.add_field(name = 'avatar', value ='see a profile pic of a user or bot',inline = False)
     embed.add_field(name = 'flipcoin', value ='flip a coin',inline = False)
     embed.add_field(name = 'unmute', value ='unmute a user',inline = False)
+    await client.send_message(author,embed=embed)
+    await client.say('📨 Check DMs For Information and do *help2 for other commands help')
+@client.command(pass_context = True)
+async def help2(ctx):
+    author = ctx.message.author
+    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+    embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+    embed.set_author(name='Help2')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')    
     embed.add_field(name = 'access', value ='acces a member',inline = False)
     embed.add_field(name = 'setpartner', value ='setup partner',inline = False)
     embed.add_field(name = 'partner', value ='partner',inline = False)
