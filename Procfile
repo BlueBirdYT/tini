@@ -1,1 +1,1 @@
-worker: python fini.py
+worker: python Tini.py
