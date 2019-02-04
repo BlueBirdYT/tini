@@ -1025,6 +1025,15 @@ async def help2(ctx):
     embed.add_field(name = 'hug', value ='hug someone',inline = False)
     embed.add_field(name = 'joke', value ='hear jokes from the bot',inline = False)
     embed.add_field(name = 'rolldice', value ='roll a dice',inline = False)
+    await client.send_message(author,embed=embed)
+    await client.say('📨 Check DMs For Information and help3 for more commands help')
+@client.command(pass_context = True)
+async def help3(ctx):
+    author = ctx.message.author
+    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+    embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+    embed.set_author(name='Help')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')    
     embed.add_field(name = 'invite', value ='invite the bot to a server',inline = False)
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
