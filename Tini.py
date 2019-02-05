@@ -8,6 +8,7 @@ import aiohttp
 import random
 import os
 import datetime
+import nonetype
 from discord import Game, Embed, Color, Status, ChannelType
 
 
