@@ -1088,14 +1088,14 @@ async def devunmute(ctx, member: discord.Member=None):
       await client.say('Please specify member i.e. Mention a member to unmute. Example- ``*devunmute @user``')
     if ctx.message.author.bot:
       return
-else:
-    role = discord.utils.get(member.server.roles, name='Muted')
+ else:
+      role = discord.utils.get(member.server.roles, name='Muted')
         await client.remove_roles(member, role)
         await client.say("Unmuted **{}**".format(member))
         for channel in member.server.channels:
           if channel.name == 'server-log':
               embed=discord.Embed(title="User unmuted!", description="**{0}** was unmuted by **{1}**!".format(member, ctx.message.author), color=0xFD1600)
-              await client.send_message(channel, embed=embed)
+              await client.send_message(channel, embed=embed)  
 
 @client.command(pass_context=True)
 @commands.has_permissions(ban_members=True)
