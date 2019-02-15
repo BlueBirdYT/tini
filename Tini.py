@@ -1202,7 +1202,7 @@ async def on_reaction_add(reaction, user):
     ChID = '545901600435208223'
     if reaction.message != ChID:
         return;
-    if user.reaction.emoji == ":white_check_mark:":
+    if user.reaction.emoji == "✅":
         Verification = discord.utils.get(user.server.roles, name="Verification")
         await client.add_roles(user, Verification) 
 
