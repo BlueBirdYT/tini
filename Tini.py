@@ -1206,7 +1206,7 @@ async def roles(context):
 	result = "Here are the rroles! "
 	for role in roles:
 		result += '``' + role.name + '``' + ": " + '``' + role.id + '``' + "\n "
-        await client.say(result)    
+		await client.say(result)    
 
         
 client.run(os.getenv('Token'))
