@@ -1039,6 +1039,7 @@ async def help3(ctx):
     embed.add_field(name = 'invite', value ='invite the bot to a server',inline = False)
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
+    embed.add_field(name = 'mention', value ='makes a role mentionable and pings them with the message and makes them unmentionable',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
@@ -1143,7 +1144,22 @@ async def devwarn(ctx, userName: discord.User=None,*, message:str=None):
             embed=discord.Embed(title="User Warned!", description="{0} warned by {1} for {2}".format(userName, ctx.message.author, message), color=0x0521F6)
             await client.send_message(channel, embed=embed)
       
-
+@client.command(pass_context=True)
+@commands.has_permissions(administrator=True)     
+async def mention(ctx, rolename:discord.Role=None,*,stuff:str=None):
+    if rolename is None:
+        await client.say('Undefined rolename')
+        return
+    if stuff is None:
+        await client.edit_role(ctx.message.server, rolename, mentionable=True)
+        await client.say(f'{rolename.mention}')
+        await client.edit_role(ctx.message.server, rolename, mentionable=False)
+        return
+    else:
+        await client.edit_role(ctx.message.server, rolename, mentionable=True)
+        await client.say(f'{rolename.mention} ' + stuff)
+        await client.edit_role(ctx.message.server, rolename, mentionable=False)
+        return
         
         
         
