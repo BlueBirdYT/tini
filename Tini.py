@@ -1040,6 +1040,8 @@ async def help3(ctx):
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
     embed.add_field(name = 'mention', value ='makes a role mentionable and pings them with the message and makes them unmentionable',inline = False)
+    embed.add_feild(name = 'poll', value ='make a poll',inline = False)
+    embed.add_field(name = 'ownerinfo', value ='check the bots owner',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
@@ -1161,8 +1163,41 @@ async def mention(ctx, rolename:discord.Role=None,*,stuff:str=None):
         await client.say(f'{rolename.mention} ' + stuff)
         await client.edit_role(ctx.message.server, rolename, mentionable=False)
         return
-        
-        
+
+@client.command(pass_context=True)
+async def poll(ctx, question, *options: str):
+        if len(options) <= 1:
+            await client.say('You need more than one option to make a poll!')
+            return
+        if len(options) > 10:
+            await client.say('You cannot make a poll for more than 10 things!')
+            return
+
+        if len(options) == 2 and options[0] == 'yes' and options[1] == 'no':
+            reactions = ['👍', '👎']
+        else:
+            reactions = ['1\u20e3', '2\u20e3', '3\u20e3', '4\u20e3', '5\u20e3', '6\u20e3', '7\u20e3', '8\u20e3', '9\u20e3', '\U0001f51f']
+
+        description = []
+        for x, option in enumerate(options):
+            description += '\n {} {}'.format(reactions[x], option)
+            r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+        embed = discord.Embed(title=question, description=''.join(description), color = discord.Color((r << 16) + (g << 8) + b))
+        react_message = await client.say(embed=embed)
+        for reaction in reactions[:len(options)]:
+            await client.add_reaction(react_message, reaction)
+        embed.set_footer(text='Poll ID: {}'.format(react_message.id))
+        await client.edit_message(react_message, embed=embed) 
+    
+@client.command(pass_context=True)
+async def ownerinfo(ctx):
+    embed = discord.Embed(title="Information about owner", description="Main Creator: gaurav#0001", color=0x00ff00)
+    embed.set_author(name=" Bot Owner ""gaurav#0001")
+    embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
+    await client.say(embed=embed)
+
+  
+
         
 client.run(os.getenv('Token'))
 
