@@ -1204,7 +1204,7 @@ async def on_reaction_add(reaction, user):
         return;
     if user.reaction.emoji == ":white_check_mark:":
         Verification = discord.utils.get(user.server.roles, name="Verification")
-        await client.add_roles(user, CSGO) 
+        await client.add_roles(user, Verification) 
 
         
 client.run(os.getenv('Token'))
