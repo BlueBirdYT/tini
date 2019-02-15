@@ -1165,6 +1165,7 @@ async def mention(ctx, rolename:discord.Role=None,*,stuff:str=None):
         return
 
 @client.command(pass_context=True)
+@commands.has_permissions(administrator=True)
 async def poll(ctx, question, *options: str):
         if len(options) <= 1:
             await client.say('You need more than one option to make a poll!')
@@ -1196,7 +1197,14 @@ async def ownerinfo(ctx):
     embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
     await client.say(embed=embed)
 
-  
+@client.event
+async def on_reaction_add(reaction, user):
+    ChID = '545901600435208223'
+    if reaction.message != ChID:
+        return;
+    if user.reaction.emoji == ":white_check_mark:":
+        Verification = discord.utils.get(user.server.roles, name="Verification")
+        await client.add_roles(user, CSGO) 
 
         
 client.run(os.getenv('Token'))
