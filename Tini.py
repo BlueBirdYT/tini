@@ -962,7 +962,7 @@ async def remind(ctx, time=None, *,remind=None):
 
     await client.send_message(ctx.message.author, "Reminder: {}".format(remind))
 
-client.command(pass_context = True)
+@client.command(pass_context = True)
 async def help(ctx):
     author = ctx.message.author
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
