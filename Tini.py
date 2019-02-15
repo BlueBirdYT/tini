@@ -1040,8 +1040,8 @@ async def help3(ctx):
     embed.add_field(name = 'say', value ='make the bot say anything but administrator perms is required to use it',inline = False)
     embed.add_field(name = 'remind', value ='remind yourself',inline = False)
     embed.add_field(name = 'mention', value ='makes a role mentionable and pings them with the message and makes them unmentionable',inline = False)
-    embed.add_feild(name = 'poll', value ='make a poll',inline = False)
     embed.add_field(name = 'ownerinfo', value ='check the bots owner',inline = False)
+    embed.add_field(name = 'poll', value ='make a poll',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
