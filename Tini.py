@@ -1147,6 +1147,7 @@ async def devwarn(ctx, userName: discord.User=None,*, message:str=None):
 @client.command(pass_context=True)
 @commands.has_permissions(administrator=True)     
 async def mention(ctx, rolename:discord.Role=None,*,stuff:str=None):
+    await client.delete_message(ctx.message)
     if rolename is None:
         await client.say('Undefined rolename')
         return
