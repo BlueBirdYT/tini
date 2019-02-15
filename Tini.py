@@ -139,7 +139,7 @@ async def unlock(ctx, channelname: discord.Channel=None):
 @client.command(pass_context = True)
 async def dm(ctx, user: discord.Member, *, msg: str):
    if user is None or msg is None:
-       await client.say('Invalid args. Use this command like: ``Mdm @user message``')
+       await client.say('Invalid args. Use this command like: ``*dm @user message``')
    if ctx.message.author.server_permissions.kick_members == False:
        await client.say('**You do not have permission to use this command**')
        return
@@ -1042,6 +1042,7 @@ async def help3(ctx):
     embed.add_field(name = 'mention', value ='makes a role mentionable and pings them with the message and makes them unmentionable',inline = False)
     embed.add_field(name = 'ownerinfo', value ='check the bots owner',inline = False)
     embed.add_field(name = 'poll', value ='make a poll',inline = False)
+    embed.add_field(name = 'server', value ='link to the support server',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
@@ -1198,6 +1199,11 @@ async def ownerinfo(ctx):
     await client.say(embed=embed)
 
 
+@client.command(pass_context=True)
+async def server(ctx):
+    await client.say('link to join support server https://discord.gg/6NPSunR')
+    
+    
 client.run(os.getenv('Token'))
 
 
