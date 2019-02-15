@@ -676,7 +676,7 @@ async def serverinfo(ctx):
     await client.send_message(ctx.message.channel, embed=embed)
 
 
-@client.command(pass_context=True, aliases=['server'])
+@client.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def membercount(ctx, *args):
     if ctx.message.channel.is_private:
@@ -1199,7 +1199,7 @@ async def ownerinfo(ctx):
 
 
 @client.command(pass_context=True)
-async def support(ctx):
+async def server(ctx):
     await client.say('link to join support server https://discord.gg/6NPSunR')
     
     
