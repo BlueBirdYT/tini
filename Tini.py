@@ -1042,6 +1042,7 @@ async def help3(ctx):
     embed.add_field(name = 'mention', value ='makes a role mentionable and pings them with the message and makes them unmentionable',inline = False)
     embed.add_field(name = 'ownerinfo', value ='check the bots owner',inline = False)
     embed.add_field(name = 'poll', value ='make a poll',inline = False)
+    embed.add_field(name = 'roles', value ='check how many roles you have in the server',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
@@ -1197,6 +1198,15 @@ async def ownerinfo(ctx):
     embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
     await client.say(embed=embed)
 
+@client.command(pass_context=True)
+@commands.has_permissions(kick_members=True) 
+async def roles(context):
+	"""Displays all of the roles with their ids"""
+	roles = context.message.server.roles
+	result = "Here are the rroles! "
+	for role in roles:
+		result += '``' + role.name + '``' + ": " + '``' + role.id + '``' + "\n "
+        await client.say(result)    
 
         
 client.run(os.getenv('Token'))
