@@ -1058,7 +1058,8 @@ async def help3(ctx):
     embed.add_field(name = 'np', value ='check the current song playing',inline = False)
     embed.add_field(name = 'volume', value ='check the current volume and increase it by saying *volume (amount)',inline = False)
     embed.add_field(name = 'pause', value ='pause the song',inline = False)
-    embed.add_field(name = 'resume', value ='resume the song', inline = False)
+    embed.add_field(name = 'resume', value ='resume the song',inline = False)
+    embed.add_field(name = 'skip', value ='skip the current song',inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
