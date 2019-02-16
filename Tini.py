@@ -861,7 +861,13 @@ async def rolldice(ctx):
 
 @client.command(pass_context = True)
 async def invite():
-    await client.say('here is the link to invite me https://discordapp.com/api/oauth2/authorize?client_id=541927707760525342&permissions=8&scope=bot')
+    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+    embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
+    embed.set_image(url="https://cdn.discordapp.com/avatars/541927707760525342/604313392414708b2ead057c6a02363f.webp?size=1024")
+    embed.add_field(name = 'Link to invite me', value=' https://discordapp.com/api/oauth2/authorize?client_id=541927707760525342&permissions=8&scope=bot')
+    embed.add_field(name = 'bot info', value='Tini is a simple bot easy and fun to use we will do updates and keep improving the bot')
+    await client.say(embed=embed)
+    await client.delete_message(ctx.message)
 
 @client.command(pass_context = True)
 @commands.has_permissions(administrator=True)
