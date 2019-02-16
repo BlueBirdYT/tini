@@ -1297,7 +1297,7 @@ async def on_message(message):
 async def on_message(message):
       if message.author.server_permissions.administrator:
             return
-        if 'shit' in message.content:
+      if 'shit' in message.content:
           msg = 'Do not use bad words {0.author.name}'.format(message)
           msg2 = await client.send_message(message.channel, msg)
           await client.delete_message(message)
