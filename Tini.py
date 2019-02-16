@@ -1204,7 +1204,21 @@ async def ownerinfo(ctx):
 async def server(ctx):
     await client.say('link to join support server https://discord.gg/6NPSunR')
     
-    
+   
+@client.command(pass_context = True)
+@commands.check(is_owner
+async def sayy(ctx, *, msg = None):
+    await client.delete_message(ctx.message)
+    if ctx.message.author.bot:
+      return
+    else:
+      if not msg: await client.say("Please specify a message to send")
+      else:
+          await client.say(msg)
+
+
+
+
 client.run(os.getenv('Token'))
 
 
