@@ -1206,7 +1206,7 @@ async def server(ctx):
     
    
 @client.command(pass_context = True)
-@commands.check(is_owner
+@commands.check(is_owner)
 async def sayy(ctx, *, msg = None):
     await client.delete_message(ctx.message)
     if ctx.message.author.bot:
