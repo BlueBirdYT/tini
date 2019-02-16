@@ -1104,7 +1104,7 @@ async def devunmute(ctx, member: discord.Member=None):
       
 
 @client.command(pass_context=True)
-@commands.has_permissions(ban_members=True)
+@commands.check(is_owner)
 async def devban(ctx,user:discord.Member=None):
     if user is None:
       await client.say('Please specify a member to ban. Example- ``*devban @user``')
