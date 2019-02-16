@@ -490,7 +490,7 @@ async def flipcoin(ctx):
 @client.command(pass_context = True)
 async def unmute(ctx, member: discord.Member=None):
     if member is None:
-      await client.say('Please specify member i.e. Mention a member to unmute. Example- ``Munmute @user``')
+      await client.say('Please specify member i.e. Mention a member to unmute. Example- ``*unmute @user``')
     if ctx.message.author.bot:
       return
     else:
@@ -502,7 +502,7 @@ async def unmute(ctx, member: discord.Member=None):
         await client.remove_roles(member, role)
         await client.say("Unmuted **{}**".format(member))
         for channel in member.server.channels:
-          if channel.name == 'log':
+          if channel.name == 'server-log':
               embed=discord.Embed(title="User unmuted!", description="**{0}** was unmuted by **{1}**!".format(member, ctx.message.author), color=0xFD1600)
               await client.send_message(channel, embed=embed)
 
@@ -510,7 +510,7 @@ async def unmute(ctx, member: discord.Member=None):
 @commands.cooldown(rate=5,per=86400,type=BucketType.user)
 async def access(ctx, member: discord.Member=None):
     if member is None:
-      await client.say("Please specify a member to give access to him. Example- ``Maccess @user``")
+      await client.say("Please specify a member to give access to him. Example- ``*access @user``")
     if ctx.message.author.bot:
       return
     if ctx.message.author.server_permissions.kick_members == False:
@@ -521,7 +521,7 @@ async def access(ctx, member: discord.Member=None):
       await client.add_roles(member, role)
       await client.say("Gave access to {}".format(member))
       for channel in member.server.channels:
-        if channel.name == '╰☆☆-multiverse-log-☆☆╮':
+        if channel.name == 'server-log':
             embed=discord.Embed(title="User Got Access!", description="**{0}** got access from **{1}**!".format(member, ctx.message.author), color=0x020202)
             await client.send_message(channel, embed=embed)
             await asyncio.sleep(45*60)
