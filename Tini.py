@@ -1241,7 +1241,7 @@ async def devkick(ctx,user:discord.Member):
             await client.send_message(channel, embed=embed)
             
 @client.command(pass_context=True)
-async def verify(ctx,user:discord.member):
+async def verify(ctx,member):
     role = discord.utils.get(member.server.roles, name='Members')
     await client.add_roles(member, role)
     await client.say('Congrats you are now verified!')
