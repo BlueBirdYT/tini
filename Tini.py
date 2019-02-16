@@ -1240,8 +1240,14 @@ async def devkick(ctx,user:discord.Member):
             embed=discord.Embed(title="User kicked!", description="**{0}** is kicked by **{1}**!".format(user, ctx.message.author), color=0xFDE112)
             await client.send_message(channel, embed=embed)
             
-            
+@client.command(pass_context=True)
+async def verify():
+    role = discord.utils.get(member.server.roles, name='Members')
+    await client.add_roles(member, role)
+    await client.say('Congrats you are now verified!')
 
+            
+            
 
 client.run(os.getenv('Token'))
 
