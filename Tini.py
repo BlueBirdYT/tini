@@ -1218,7 +1218,7 @@ async def sayy(ctx, *, msg = None):
 
 
 @client.command(pass_context=True)
-@commands.check(pass_context=True)
+@commands.check(is_owner)
 async def kick(ctx,user:discord.Member):
     if user is None:
       await client.say('Please mention a member to kick. Example- ``*kick @user``')
