@@ -1050,6 +1050,13 @@ async def help3(ctx):
     embed.add_field(name = 'ownerinfo', value ='check the bots owner',inline = False)
     embed.add_field(name = 'poll', value ='make a poll',inline = False)
     embed.add_field(name = 'server', value ='link to the support server',inline = False)
+    embed.add_field(name = 'play', value ='play songs',inline = False)
+    embed.add_field(name = 'stop', value ='stop the bot from playing songs',inline = False)
+    embed.add_field(name = 'queue', value ='see the queue',inline = False)
+    embed.add_field(name = 'np', value ='check the current song playing',inline = False)
+    embed.add_field(name = 'volume', value ='check the current volume and increase it by saying *volume (amount)',inline = False)
+    embed.add_field(name = 'pause', value ='pause the song',inline = False)
+    embed.add_field(name = 'resume', value ='resume the song', inline = False)
     await client.send_message(author,embed=embed)
     await client.say('📨 Check DMs For Information')
 
