@@ -1296,7 +1296,7 @@ async def on_message(message):
 @client.event
 async def on_message(message):
       if message.author.server_permissions.administrator:
-            return
+          return
       if 'shit' in message.content:
           msg = 'Do not use bad words {0.author.name}'.format(message)
           msg2 = await client.send_message(message.channel, msg)
@@ -1313,8 +1313,8 @@ async def on_message(message):
                 embed.add_field(name = 'Type of bad word:',value ='English bad word',inline = False)
                 embed.add_field(name = 'Channel:',value ='{}'.format(message.channel.name),inline = False)
                 embed.add_field(name = 'Message:',value ='{}'.format(message.content),inline = False)
-                await client.send_message(channel, embed=embed)
-      
+                await client.send_message(channel, embed=embed)                
+                
                 
                 
             
