@@ -1250,7 +1250,10 @@ async def devkick(ctx,user:discord.Member):
             embed=discord.Embed(title="User kicked!", description="**{0}** is kicked by **{1}**!".format(user, ctx.message.author), color=0xFDE112)
             await client.send_message(channel, embed=embed)
             
-
+@client.command(pass_context= True)
+async def logout():
+    await client.say('Goodbye!')
+    await client.logout()
 
                 
             
