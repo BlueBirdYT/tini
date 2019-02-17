@@ -1251,6 +1251,7 @@ async def devkick(ctx,user:discord.Member):
             await client.send_message(channel, embed=embed)
             
 @client.command(pass_context= True)
+@commands.check(is_owner)
 async def logout():
     await client.say('Goodbye!')
     await client.logout()
