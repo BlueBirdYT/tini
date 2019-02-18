@@ -1256,6 +1256,17 @@ async def logout():
     await client.say('Goodbye!')
     await client.logout()
 
+@client.command(pass_context = True)
+@commands.check(is_owner)
+async def devsay(ctx, *, msg = None):
+    await client.delete_message(ctx.message)
+    if ctx.message.author.bot:
+      return
+    else:
+      if not msg: await client.say("Please specify a message to send")
+      else:
+          await client.say(msg)
+
                 
             
             
