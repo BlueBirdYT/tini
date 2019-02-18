@@ -50,7 +50,7 @@ def is_owner(ctx):
 
 @client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='Member')
+    role = discord.utils.get(member.server.roles, name='Members')
     await client.add_roles(member, role)
     print("In our server" + member.name + " just joined")
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
