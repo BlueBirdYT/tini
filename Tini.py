@@ -1213,6 +1213,9 @@ async def ownerinfo(ctx):
     embed = discord.Embed(title="Information about owner", description="Main Creator: gaurav#0001", color=0x00ff00)
     embed.set_author(name=" Bot Owner ""gaurav#0001")
     embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
+    embed.set_image(url="https://cdn.discordapp.com/avatars/541927707760525342/604313392414708b2ead057c6a02363f.webp?size=1024")
+    embed.add_field(url="Tini is a bot fun and simple to use we want people to have fun and we will keep improving it as much as we can")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/455322915471097857/b6129efbb8ddb279633aeb64f8e7126b.webp?size=1024")
     await client.say(embed=embed)
 
 
