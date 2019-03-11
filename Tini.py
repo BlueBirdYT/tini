@@ -467,14 +467,14 @@ async def avatar(ctx, user: discord.Member=None):
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(ctx.message.author.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/541927707760525342/0adb5ef06887e3fe27edefe8a8851e05.webp?size=1024')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/541927707760525342/da8dc3d90b8e8b68c6a3b100714c9503.webp?size=1024')
         embed.set_image(url = ctx.message.author.avatar_url)
         await client.say(embed=embed)
     else:
         r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
         embed = discord.Embed(title=f'Avatar', description='Avatar is profile picture of a user in discord', color = discord.Color((r << 16) + (g << 8) + b))
         embed.add_field(name='User: {}'.format(user.name), value='Avatar:', inline=True)
-        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/541927707760525342/0adb5ef06887e3fe27edefe8a8851e05.webp?size=1024')
+        embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/541927707760525342/da8dc3d90b8e8b68c6a3b100714c9503.webp?size=1024')
         embed.set_image(url = user.avatar_url)
         await client.say(embed=embed)
 
@@ -865,9 +865,9 @@ async def rolldice(ctx):
 async def invite():
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
-    embed.set_image(url="https://cdn.discordapp.com/avatars/541927707760525342/604313392414708b2ead057c6a02363f.webp?size=1024")
+    embed.set_image(url="https://cdn.discordapp.com/avatars/541927707760525342/da8dc3d90b8e8b68c6a3b100714c9503.webp?size=1024")
     embed.add_field(name = 'Link to invite me', value=' https://discordapp.com/api/oauth2/authorize?client_id=541927707760525342&permissions=8&scope=bot')
-    embed.add_field(name = 'bot info', value='Tini is a simple bot easy and fun to use we will do updates and keep improving the bot')
+    embed.add_field(name = 'bot info', value='illusion is a simple bot easy and fun to use we will do updates and keep improving the bot')
     await client.say(embed=embed)
     await client.delete_message(ctx.message)
 
@@ -1214,8 +1214,8 @@ async def ownerinfo(ctx):
     embed.set_author(name=" Bot Owner ""gaurav#0001")
     embed.add_field(name="Co-owner: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
     embed.set_image(url="https://cdn.discordapp.com/avatars/541927707760525342/604313392414708b2ead057c6a02363f.webp?size=1024")
-    embed.add_field(name="bot info", value="Tini is a bot fun and simple to use we want people to have fun and we will keep improving it as much as we can")
-    embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/455322915471097857/b6129efbb8ddb279633aeb64f8e7126b.webp?size=1024")
+    embed.add_field(name="bot info", value="illusion is a bot fun and simple to use we want people to have fun and we will keep improving it as much as we can")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/541927707760525342/da8dc3d90b8e8b68c6a3b100714c9503.webp?size=1024")
     await client.say(embed=embed)
 
 
